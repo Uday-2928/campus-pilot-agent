@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { OpportunityCarousel } from '@/components/OpportunityCarousel/OpportunityCarousel';
+import { Generate } from '@/components/Generate';
 
 const dashboardStats = [
   { label: 'Profile completion', value: '92%', detail: '+8% this month' },
@@ -62,9 +63,15 @@ export default function StudentDashboard() {
               We've found new opportunities based on your recent skill updates.
             </p>
           </div>
-          <Link href="/student/profile" className="shrink-0 bg-on-surface text-surface px-6 py-2.5 rounded-full font-semibold text-sm hover:bg-on-surface/90 transition-all shadow-md active:scale-95">
-            Update Profile
-          </Link>
+          <div className="flex flex-col sm:flex-row items-center gap-3 shrink-0">
+            <Link href="/admin/login" className="bg-white/50 border border-white/60 text-on-surface px-6 py-2.5 rounded-full font-semibold text-sm hover:bg-white/80 transition-all shadow-sm active:scale-95 flex items-center gap-2">
+              <span className="material-symbols-outlined text-[18px]">admin_panel_settings</span>
+              Admin Portal
+            </Link>
+            <Link href="/profile" className="bg-on-surface text-surface px-6 py-2.5 rounded-full font-semibold text-sm hover:bg-on-surface/90 transition-all shadow-md active:scale-95">
+              Update Profile
+            </Link>
+          </div>
         </div>
         <div className="mt-8 pt-6 border-t border-white/40">
           <div className="flex justify-between items-center mb-3">
@@ -98,6 +105,19 @@ export default function StudentDashboard() {
         ))}
       </section>
 
+      {/* AI Generator Demo Section */}
+      <section className="mb-10">
+        <div className="bg-white/40 rounded-3xl border border-white/60 shadow-sm p-8 backdrop-blur-xl">
+          <h2 className="font-display-md text-2xl text-on-surface mb-6 flex items-center gap-2">
+            <span className="material-symbols-outlined text-purple-500">auto_awesome</span>
+            AI Identity Generator
+          </h2>
+          <div className="flex justify-center">
+            <Generate pace={3} />
+          </div>
+        </div>
+      </section>
+
       <section>
         <div className="flex items-center justify-between mb-6">
           <h2 className="font-display-md text-2xl text-on-surface">Recommended for you</h2>
@@ -114,10 +134,14 @@ export default function StudentDashboard() {
               // Simulate AI semantic matching score for demo
               const mockScore = Math.floor(Math.random() * (98 - 75 + 1) + 75);
               return (
-              <article key={card.id || i} className="bg-white/40 rounded-3xl border border-white/60 shadow-[0_8px_32px_rgba(0,0,0,0.04)] p-6 backdrop-blur-xl flex flex-col hover:-translate-y-1 transition-all duration-300">
+              <article 
+                key={card.id || i} 
+                onClick={() => window.open(card.url || '#', '_blank', 'noopener,noreferrer')}
+                className="cursor-pointer bg-white/40 rounded-3xl border border-white/60 shadow-[0_8px_32px_rgba(0,0,0,0.04)] p-6 backdrop-blur-xl flex flex-col hover:-translate-y-1 transition-all duration-300"
+              >
                 <div className="flex justify-between items-start mb-4">
                   <div className={`px-3 py-1 rounded-full border text-xs font-bold tracking-wide uppercase ${getBadgeColor(card.event_type)}`}>
-                    {card.event_type}
+                    {card.event_type.replace('_', ' ')}
                   </div>
                   <div className="flex items-center gap-1 bg-[#38BDF8]/10 border border-[#38BDF8]/30 px-2.5 py-1 rounded-full text-[#0284c7] text-xs font-bold shadow-sm">
                     <span className="material-symbols-outlined text-[14px]">auto_awesome</span>
@@ -153,10 +177,10 @@ export default function StudentDashboard() {
                 </div>
 
                 <div className="flex items-center gap-3 mt-auto">
-                  <a href={card.url || '#'} target="_blank" rel="noopener noreferrer" className="flex-1 bg-on-surface text-surface py-2.5 rounded-full font-semibold text-sm hover:bg-on-surface/90 transition-all shadow-md active:scale-95 text-center inline-block">
+                  <a href={card.url || '#'} target="_blank" rel="noopener noreferrer" onClick={(e) => e.stopPropagation()} className="flex-1 bg-on-surface text-surface py-2.5 rounded-full font-semibold text-sm hover:bg-on-surface/90 transition-all shadow-md active:scale-95 text-center inline-block">
                     Apply Now
                   </a>
-                  <button className="w-12 h-12 shrink-0 bg-white/50 border border-white/60 rounded-full flex items-center justify-center text-on-surface hover:bg-white/70 transition-all shadow-sm active:scale-95">
+                  <button onClick={(e) => e.stopPropagation()} className="w-12 h-12 shrink-0 bg-white/50 border border-white/60 rounded-full flex items-center justify-center text-on-surface hover:bg-white/70 transition-all shadow-sm active:scale-95">
                     <span className="material-symbols-outlined text-[20px]">bookmark_border</span>
                   </button>
                 </div>

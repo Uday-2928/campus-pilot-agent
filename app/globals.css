@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@import "./bencho.css";
 
 @theme {
   --color-on-tertiary-fixed: #001f29;

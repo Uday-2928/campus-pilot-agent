@@ -75,10 +75,14 @@ export function OpportunitiesList({ type, title, description, gradientColor = 'f
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
             {opportunities.map((card, i) => {
               return (
-                <article key={card.id || i} className="bg-white/40 rounded-3xl border border-white/60 shadow-[0_8px_32px_rgba(0,0,0,0.04)] p-6 backdrop-blur-xl flex flex-col hover:-translate-y-1 transition-all duration-300">
+                <article 
+                  key={card.id || i} 
+                  onClick={() => window.open(card.url || '#', '_blank', 'noopener,noreferrer')}
+                  className="cursor-pointer bg-white/40 rounded-3xl border border-white/60 shadow-[0_8px_32px_rgba(0,0,0,0.04)] p-6 backdrop-blur-xl flex flex-col hover:-translate-y-1 transition-all duration-300"
+                >
                   <div className="flex justify-between items-start mb-4">
                     <div className={`px-3 py-1 rounded-full border text-xs font-bold tracking-wide uppercase ${getBadgeColor(card.event_type)}`}>
-                      {card.event_type}
+                      {card.event_type.replace('_', ' ')}
                     </div>
                   </div>
 
@@ -109,7 +113,7 @@ export function OpportunitiesList({ type, title, description, gradientColor = 'f
                   </p>
 
                   <div className="flex items-center gap-3 mt-auto">
-                    <a href={card.url || '#'} target="_blank" rel="noopener noreferrer" className="flex-1 bg-on-surface text-surface py-2.5 rounded-full font-semibold text-sm hover:bg-on-surface/90 transition-all shadow-md active:scale-95 text-center inline-block">
+                    <a href={card.url || '#'} target="_blank" rel="noopener noreferrer" onClick={(e) => e.stopPropagation()} className="flex-1 bg-on-surface text-surface py-2.5 rounded-full font-semibold text-sm hover:bg-on-surface/90 transition-all shadow-md active:scale-95 text-center inline-block">
                       View Details
                     </a>
                   </div>

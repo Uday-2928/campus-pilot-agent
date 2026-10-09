@@ -10,6 +10,7 @@ export default function ResumePortal() {
   const [isAnalyzing, setIsAnalyzing] = useState(false);
   const [resultsReady, setResultsReady] = useState(false);
   const [resumeText, setResumeText] = useState("");
+  const [analysisResults, setAnalysisResults] = useState<any>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
 
   // --- Builder State ---
@@ -32,14 +33,47 @@ export default function ResumePortal() {
   const ActiveTemplateComponent = templatesArray.find(t => t.id === selectedTemplateId)?.component || templatesArray[0].component;
 
   // --- Analyzer Handlers ---
-  const handleAnalyze = () => {
+  const handleAnalyze = async () => {
     if (!resumeText.trim()) return;
     setIsAnalyzing(true);
     setResultsReady(false);
-    setTimeout(() => {
-      setIsAnalyzing(false);
+    
+    try {
+      const response = await fetch('/api/analyze-resume', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ text: resumeText })
+      });
+      
+      if (!response.ok) throw new Error("Analysis failed");
+      
+      const data = await response.json();
+      setAnalysisResults(data);
+      
+      // Auto-populate the builder
+      if (data.profile) {
+        setResumeData(prev => ({
+          ...prev,
+          name: data.profile.name || prev.name,
+          title: data.profile.title || prev.title,
+          email: data.profile.email || prev.email,
+          phone: data.profile.phone || prev.phone,
+          location: data.profile.location || prev.location,
+          summary: data.profile.summary || prev.summary,
+          skills: data.profile.skills || prev.skills,
+          education: data.profile.education || prev.education,
+          experience: data.profile.experience || prev.experience,
+          projects: data.profile.projects || prev.projects,
+        }));
+      }
+      
       setResultsReady(true);
-    }, 3000);
+    } catch (err) {
+      console.error(err);
+      alert("Failed to analyze resume. Check your API key.");
+    } finally {
+      setIsAnalyzing(false);
+    }
   };
 
   const handleFileUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -150,28 +184,28 @@ export default function ResumePortal() {
                 <h3 className="text-xl font-semibold text-on-surface mb-2 animate-pulse">Running Semantic Analysis...</h3>
               </div>
             )}
-            {resultsReady && (
+            {resultsReady && analysisResults && (
               <div className="space-y-6 animate-in fade-in slide-in-from-bottom-4 duration-700">
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                   <div className="bg-white/60 rounded-2xl border border-emerald-500/30 shadow-sm p-6 flex flex-col relative overflow-hidden">
                     <div className="absolute top-0 left-0 w-full h-1 bg-emerald-500"></div>
                     <span className="text-sm font-medium text-on-surface-variant mb-1">Overall ATS Score</span>
                     <div className="flex items-end gap-2">
-                      <span className="text-4xl font-display-md text-emerald-700">78</span><span className="text-sm font-bold text-on-surface-variant mb-1">/ 100</span>
+                      <span className="text-4xl font-display-md text-emerald-700">{analysisResults.scores?.overall || 0}</span><span className="text-sm font-bold text-on-surface-variant mb-1">/ 100</span>
                     </div>
                   </div>
                   <div className="bg-white/60 rounded-2xl border border-amber-500/30 shadow-sm p-6 flex flex-col relative overflow-hidden">
                     <div className="absolute top-0 left-0 w-full h-1 bg-amber-500"></div>
                     <span className="text-sm font-medium text-on-surface-variant mb-1">Impact Verbs</span>
                     <div className="flex items-end gap-2">
-                      <span className="text-4xl font-display-md text-amber-600">62</span><span className="text-sm font-bold text-on-surface-variant mb-1">/ 100</span>
+                      <span className="text-4xl font-display-md text-amber-600">{analysisResults.scores?.impactVerbs || 0}</span><span className="text-sm font-bold text-on-surface-variant mb-1">/ 100</span>
                     </div>
                   </div>
                   <div className="bg-white/60 rounded-2xl border border-blue-500/30 shadow-sm p-6 flex flex-col relative overflow-hidden">
                     <div className="absolute top-0 left-0 w-full h-1 bg-blue-500"></div>
                     <span className="text-sm font-medium text-on-surface-variant mb-1">Readability</span>
                     <div className="flex items-end gap-2">
-                      <span className="text-4xl font-display-md text-blue-600">92</span><span className="text-sm font-bold text-on-surface-variant mb-1">/ 100</span>
+                      <span className="text-4xl font-display-md text-blue-600">{analysisResults.scores?.readability || 0}</span><span className="text-sm font-bold text-on-surface-variant mb-1">/ 100</span>
                     </div>
                   </div>
                 </div>
@@ -181,13 +215,33 @@ export default function ResumePortal() {
                     <span className="material-symbols-outlined text-indigo-600">psychology</span> AI Recommendations
                   </h3>
                   <div className="space-y-4">
-                    <div className="bg-amber-500/10 border border-amber-500/30 p-4 rounded-xl flex gap-4">
-                      <span className="material-symbols-outlined text-amber-600 mt-0.5">warning</span>
-                      <div>
-                        <h4 className="font-semibold text-amber-900 text-sm mb-1">Weak Bullet Points</h4>
-                        <p className="text-sm text-amber-800/80">Some bullet points lack measurable outcomes. Add data/metrics.</p>
+                    {analysisResults.recommendations?.map((rec: any, idx: number) => (
+                      <div key={idx} className={`border p-4 rounded-xl flex gap-4 ${
+                        rec.type === 'warning' ? 'bg-amber-500/10 border-amber-500/30' : 
+                        rec.type === 'success' ? 'bg-emerald-500/10 border-emerald-500/30' : 
+                        'bg-blue-500/10 border-blue-500/30'
+                      }`}>
+                        <span className={`material-symbols-outlined mt-0.5 ${
+                          rec.type === 'warning' ? 'text-amber-600' : 
+                          rec.type === 'success' ? 'text-emerald-600' : 
+                          'text-blue-600'
+                        }`}>
+                          {rec.type === 'warning' ? 'warning' : rec.type === 'success' ? 'check_circle' : 'info'}
+                        </span>
+                        <div>
+                          <h4 className={`font-semibold text-sm mb-1 ${
+                            rec.type === 'warning' ? 'text-amber-900' : 
+                            rec.type === 'success' ? 'text-emerald-900' : 
+                            'text-blue-900'
+                          }`}>{rec.title}</h4>
+                          <p className={`text-sm ${
+                            rec.type === 'warning' ? 'text-amber-800/80' : 
+                            rec.type === 'success' ? 'text-emerald-800/80' : 
+                            'text-blue-800/80'
+                          }`}>{rec.description}</p>
+                        </div>
                       </div>
-                    </div>
+                    ))}
                   </div>
                 </div>
               </div>

@@ -13,6 +13,7 @@ export function StudentSidebar() {
     { icon: 'business', label: 'Campus Drives', href: '/student/campus-drives' },
     { icon: 'work', label: 'Internships', href: '/student/internships' },
     { icon: 'emoji_events', label: 'Hackathons', href: '/student/hackathons' },
+    { icon: 'calculate', label: 'Aptitude Prep', href: '/student/aptitude' },
     { icon: 'school', label: 'Training & Prep', href: '/student/training' },
     { icon: 'psychology', label: 'Skill Gap', href: '/student/skill-gap' },
     { icon: 'description', label: 'Resume Builder', href: '/student/resume' },

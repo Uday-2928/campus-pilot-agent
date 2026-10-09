@@ -1,114 +1,362 @@
 [
   {
-    "id": "1",
-    "title": "MindTech Arena 2026",
-    "organizer": "IIIT Kottayam",
+    "title": "HackOn with Amazon 6.0",
+    "organizer": "Amazon",
     "event_type": "hackathon",
-    "description": "A national-level hackathon hosted by the Indian Institute of Information Technology (IIIT), Kottayam. This 24-hour event challenges participants to build innovative solutions across multiple domains.",
-    "location": "Kottayam, Kerala",
-    "mode": "in_person",
-    "skills": ["Web Development", "AI/ML", "IoT"],
+    "description": "A national-level student hackathon by Amazon focusing on Generative AI, cloud technologies, and scalable systems.",
+    "location": "Online",
+    "mode": "online",
+    "skills": [
+      "Generative AI",
+      "AWS",
+      "Scalable Systems"
+    ],
+    "url": "https://unstop.com/hackathons/hackon-with-amazon",
+    "id": "889b0671-30a8-4022-a3ef-67855e911332",
     "is_active": true,
-    "registration_deadline": "2026-10-31T23:59:59Z",
-    "url": "https://unstop.com/",
-    "created_at": "2026-10-09T00:00:00Z"
+    "registration_deadline": "2026-11-08T12:46:49Z",
+    "created_at": "2026-10-08T12:46:49Z"
   },
   {
-    "id": "2",
-    "title": "RevengersHack 2026",
+    "title": "Smart India Hackathon (SIH) 2026",
+    "organizer": "Government of India",
+    "event_type": "hackathon",
+    "description": "World's largest open innovation model to solve some of the pressing problems we face in our daily lives.",
+    "location": "Various Nodal Centers, India",
+    "mode": "in_person",
+    "skills": [
+      "Web Development",
+      "Hardware",
+      "AI/ML"
+    ],
+    "url": "https://sih.gov.in/",
+    "id": "fa9105d5-699a-46c3-8bd5-0af9ff614cca",
+    "is_active": true,
+    "registration_deadline": "2026-11-10T12:46:49Z",
+    "created_at": "2026-10-08T12:46:49Z"
+  },
+  {
+    "title": "ETHGlobal Hackathon",
+    "organizer": "ETHGlobal",
+    "event_type": "hackathon",
+    "description": "The premier hackathon ecosystem for the Ethereum community. Build decentralized applications.",
+    "location": "Online",
+    "mode": "online",
+    "skills": [
+      "Web3",
+      "Solidity",
+      "Ethereum"
+    ],
+    "url": "https://ethglobal.com/",
+    "id": "00908e10-4473-40c6-a3a7-b8921693c420",
+    "is_active": true,
+    "registration_deadline": "2026-11-12T12:46:49Z",
+    "created_at": "2026-10-08T12:46:49Z"
+  },
+  {
+    "title": "NASA Space Apps Challenge",
+    "organizer": "NASA",
+    "event_type": "hackathon",
+    "description": "An international hackathon for coders, scientists, designers, storytellers, makers, builders, technologists.",
+    "location": "Global / Online",
+    "mode": "hybrid",
+    "skills": [
+      "Space Tech",
+      "Data Science",
+      "Open Data"
+    ],
+    "url": "https://www.spaceappschallenge.org/",
+    "id": "73ed47ba-d2d1-4fc8-8472-74828d545079",
+    "is_active": true,
+    "registration_deadline": "2026-11-14T12:46:49Z",
+    "created_at": "2026-10-08T12:46:49Z"
+  },
+  {
+    "title": "Devfolio MLH Hackathon",
     "organizer": "Devfolio",
     "event_type": "hackathon",
-    "description": "An online, 30-hour national hackathon focused on AI, Machine Learning, and Cybersecurity. Build robust solutions and compete for exciting prizes.",
+    "description": "Join the largest hacker community. Build hacks, learn new technologies, and win prizes.",
     "location": "Online",
     "mode": "online",
-    "skills": ["AI", "Machine Learning", "Cybersecurity"],
+    "skills": [
+      "Full Stack",
+      "Cloud",
+      "APIs"
+    ],
+    "url": "https://devfolio.co/hackathons",
+    "id": "360e7a96-56d4-4138-8bd8-3ad674438b51",
     "is_active": true,
-    "registration_deadline": "2026-11-15T23:59:59Z",
-    "url": "https://devfolio.co/",
-    "created_at": "2026-10-09T00:00:00Z"
+    "registration_deadline": "2026-11-16T12:46:49Z",
+    "created_at": "2026-10-08T12:46:49Z"
   },
   {
-    "id": "3",
-    "title": "SANDBOX 2026",
-    "organizer": "Dayananda Sagar College of Engineering",
-    "event_type": "hackathon",
-    "description": "A premier 24-hour national-level cybersecurity hackathon held at Dayananda Sagar College of Engineering, Bengaluru. Solve real-world security challenges.",
-    "location": "Bengaluru, Karnataka",
+    "title": "Google Software Engineering Intern",
+    "organizer": "Google",
+    "event_type": "internship",
+    "description": "Join Google as a Software Engineering Intern. Work on core products and services that impact billions.",
+    "location": "Bengaluru, India",
     "mode": "in_person",
-    "skills": ["Cybersecurity", "Network Security", "Ethical Hacking"],
+    "skills": [
+      "Data Structures",
+      "Algorithms",
+      "C++",
+      "Java"
+    ],
+    "url": "https://careers.google.com/jobs/results/?q=intern",
+    "id": "7d1a5516-7d19-40db-b0f1-c80529f48ffa",
     "is_active": true,
-    "registration_deadline": "2026-12-01T23:59:59Z",
-    "url": "https://devfolio.co/",
-    "created_at": "2026-10-09T00:00:00Z"
+    "registration_deadline": "2026-11-18T12:46:49Z",
+    "created_at": "2026-10-08T12:46:49Z"
   },
   {
-    "id": "4",
-    "title": "Build With Bharat 2.0",
-    "organizer": "NIT Delhi",
-    "event_type": "hackathon",
-    "description": "A premium national-level hackathon with a grand finale held at NIT Delhi. Focuses on building scalable solutions for India's digital ecosystem.",
-    "location": "Delhi",
+    "title": "Amazon SDE Intern",
+    "organizer": "Amazon",
+    "event_type": "internship",
+    "description": "Amazon is looking for ambitious students to join as Software Development Engineer Interns.",
+    "location": "Hyderabad, India",
+    "mode": "in_person",
+    "skills": [
+      "Java",
+      "Problem Solving",
+      "System Design"
+    ],
+    "url": "https://amazon.jobs/en/business_categories/student-programs",
+    "id": "902a39e2-4a77-4dd5-99de-926af2e4ded9",
+    "is_active": true,
+    "registration_deadline": "2026-11-20T12:46:49Z",
+    "created_at": "2026-10-08T12:46:49Z"
+  },
+  {
+    "title": "Microsoft SWE Intern",
+    "organizer": "Microsoft",
+    "event_type": "internship",
+    "description": "Software Engineering Internship at Microsoft. Help build the next generation of computing.",
+    "location": "Remote / Hybrid",
     "mode": "hybrid",
-    "skills": ["React", "Node.js", "Cloud Computing"],
+    "skills": [
+      "C#",
+      "Cloud Computing",
+      "Azure"
+    ],
+    "url": "https://jobs.careers.microsoft.com/global/en/search?q=intern",
+    "id": "51628e4c-2ff1-44b9-84e3-a4b0f18f959e",
     "is_active": true,
-    "registration_deadline": "2026-11-20T23:59:59Z",
-    "url": "https://unstop.com/",
-    "created_at": "2026-10-09T00:00:00Z"
+    "registration_deadline": "2026-11-22T12:46:49Z",
+    "created_at": "2026-10-08T12:46:49Z"
   },
   {
-    "id": "5",
-    "title": "Code Kalari",
-    "organizer": "IIIT Kottayam",
-    "event_type": "hackathon",
-    "description": "A 24-hour national-level hackathon organized by IIIT Kottayam. Test your coding skills and innovative thinking in a competitive environment.",
-    "location": "Kottayam, Kerala",
+    "title": "Goldman Sachs Summer Analyst",
+    "organizer": "Goldman Sachs",
+    "event_type": "internship",
+    "description": "Summer Analyst Internship for pre-final year students in Engineering and Finance.",
+    "location": "Bengaluru, India",
     "mode": "in_person",
-    "skills": ["Algorithms", "Web Development", "Mobile App Development"],
+    "skills": [
+      "Data Structures",
+      "Mathematics",
+      "Algorithms"
+    ],
+    "url": "https://www.goldmansachs.com/careers/students/programs/",
+    "id": "e5356e8e-c70a-43c0-a779-83e9fa099e1c",
     "is_active": true,
-    "registration_deadline": "2026-12-10T23:59:59Z",
-    "url": "https://devfolio.co/",
-    "created_at": "2026-10-09T00:00:00Z"
+    "registration_deadline": "2026-11-24T12:46:49Z",
+    "created_at": "2026-10-08T12:46:49Z"
   },
   {
-    "id": "6",
-    "title": "Hackrit",
-    "organizer": "GDG Techno India University",
-    "event_type": "hackathon",
-    "description": "An offline hackathon organized by the Google Developer Group on Campus at Techno India University, Kolkata. Build solutions using Google technologies.",
-    "location": "Kolkata, West Bengal",
-    "mode": "in_person",
-    "skills": ["Google Cloud", "Firebase", "Flutter", "Android"],
+    "title": "Atlassian SWE Intern",
+    "organizer": "Atlassian",
+    "event_type": "internship",
+    "description": "Help unleash the potential of every team. Software Engineering Intern at Atlassian.",
+    "location": "Sydney, Australia",
+    "mode": "hybrid",
+    "skills": [
+      "React",
+      "Java",
+      "Collaboration"
+    ],
+    "url": "https://www.atlassian.com/company/careers/students",
+    "id": "bae2c295-3aaf-4f91-bd38-52ba8b2e8b91",
     "is_active": true,
-    "registration_deadline": "2026-11-05T23:59:59Z",
-    "url": "https://devfolio.co/",
-    "created_at": "2026-10-09T00:00:00Z"
+    "registration_deadline": "2026-11-26T12:46:49Z",
+    "created_at": "2026-10-08T12:46:49Z"
   },
   {
-    "id": "7",
-    "title": "ASTRAVA 2026",
-    "organizer": "ASTRAVA",
-    "event_type": "hackathon",
-    "description": "A 24-hour national-level hackathon held in Bengaluru. Provides a platform to brainstorm and implement creative tech ideas.",
-    "location": "Bengaluru, Karnataka",
-    "mode": "in_person",
-    "skills": ["Full Stack", "Blockchain", "Web3"],
-    "is_active": true,
-    "registration_deadline": "2026-12-15T23:59:59Z",
-    "url": "https://devfolio.co/",
-    "created_at": "2026-10-09T00:00:00Z"
-  },
-  {
-    "id": "8",
-    "title": "CodeTitans India 2026",
-    "organizer": "Unstop",
-    "event_type": "competition",
-    "description": "A national-level coding competition focused on competitive programming and algorithms.",
+    "title": "AWS Cloud Practitioner Essentials",
+    "organizer": "Amazon Web Services",
+    "event_type": "workshop",
+    "description": "Official AWS workshop to learn fundamental cloud concepts and AWS services.",
     "location": "Online",
     "mode": "online",
-    "skills": ["Data Structures", "Algorithms", "C++", "Java"],
+    "skills": [
+      "AWS",
+      "Cloud Computing"
+    ],
+    "url": "https://aws.amazon.com/training/digital/aws-cloud-practitioner-essentials/",
+    "id": "150b83fd-702c-4cf1-b088-614c239e4ee4",
     "is_active": true,
-    "registration_deadline": "2026-10-25T23:59:59Z",
-    "url": "https://unstop.com/",
-    "created_at": "2026-10-09T00:00:00Z"
+    "registration_deadline": "2026-11-28T12:46:49Z",
+    "created_at": "2026-10-08T12:46:49Z"
+  },
+  {
+    "title": "Google Cloud: Intro to Generative AI",
+    "organizer": "Google Cloud",
+    "event_type": "workshop",
+    "description": "Learn the fundamentals of Generative AI, LLMs, and how to use Google Cloud tools.",
+    "location": "Online",
+    "mode": "online",
+    "skills": [
+      "Generative AI",
+      "LLMs",
+      "Prompt Engineering"
+    ],
+    "url": "https://www.cloudskillsboost.google/course_templates/536",
+    "id": "0f0a5520-5377-4901-a0f6-659a450d2243",
+    "is_active": true,
+    "registration_deadline": "2026-11-30T12:46:49Z",
+    "created_at": "2026-10-08T12:46:49Z"
+  },
+  {
+    "title": "React Official Tutorial",
+    "organizer": "Meta / React",
+    "event_type": "workshop",
+    "description": "The official interactive tutorial to learn React. Build a tic-tac-toe game from scratch.",
+    "location": "Online",
+    "mode": "online",
+    "skills": [
+      "React",
+      "JavaScript",
+      "Frontend"
+    ],
+    "url": "https://react.dev/learn",
+    "id": "b27368e3-3c60-4278-b4e8-533fc135e4ea",
+    "is_active": true,
+    "registration_deadline": "2026-12-02T12:46:49Z",
+    "created_at": "2026-10-08T12:46:49Z"
+  },
+  {
+    "title": "Kubernetes from Scratch",
+    "organizer": "CNCF",
+    "event_type": "workshop",
+    "description": "Learn Kubernetes basics, container orchestration, and deployments.",
+    "location": "Online",
+    "mode": "online",
+    "skills": [
+      "Kubernetes",
+      "Docker",
+      "DevOps"
+    ],
+    "url": "https://training.linuxfoundation.org/",
+    "id": "22246a10-bccc-4b50-83f3-05c260d816ed",
+    "is_active": true,
+    "registration_deadline": "2026-12-04T12:46:49Z",
+    "created_at": "2026-10-08T12:46:49Z"
+  },
+  {
+    "title": "Figma for Beginners",
+    "organizer": "Figma",
+    "event_type": "workshop",
+    "description": "Master the basics of UI/UX design, wireframing, and prototyping in Figma.",
+    "location": "Online",
+    "mode": "online",
+    "skills": [
+      "UI/UX",
+      "Design",
+      "Figma"
+    ],
+    "url": "https://www.figma.com/resources/learn/",
+    "id": "42a291ca-2c91-4950-8382-ea0884eaec91",
+    "is_active": true,
+    "registration_deadline": "2026-12-06T12:46:49Z",
+    "created_at": "2026-10-08T12:46:49Z"
+  },
+  {
+    "title": "TCS National Qualifier Test (NQT)",
+    "organizer": "Tata Consultancy Services",
+    "event_type": "campus_drive",
+    "description": "National Qualifier Test for fresh graduates to secure roles in TCS Ninja and Digital profiles.",
+    "location": "Pan India",
+    "mode": "in_person",
+    "skills": [
+      "Aptitude",
+      "Coding",
+      "English"
+    ],
+    "url": "https://learning.tcsionhub.in/hub/national-qualifier-test/",
+    "id": "496b1664-825e-4565-9f5a-a8e49203a5a0",
+    "is_active": true,
+    "registration_deadline": "2026-12-08T12:46:49Z",
+    "created_at": "2026-10-08T12:46:49Z"
+  },
+  {
+    "title": "Infosys Campus Recruitment",
+    "organizer": "Infosys",
+    "event_type": "campus_drive",
+    "description": "Off-campus recruitment drive for Systems Engineer and Specialist Programmer roles.",
+    "location": "Pan India",
+    "mode": "online",
+    "skills": [
+      "Algorithms",
+      "Object Oriented Programming",
+      "Databases"
+    ],
+    "url": "https://www.infosys.com/careers/graduates.html",
+    "id": "7ff63493-409d-4264-bb30-b8e73c6005d3",
+    "is_active": true,
+    "registration_deadline": "2026-12-10T12:46:49Z",
+    "created_at": "2026-10-08T12:46:49Z"
+  },
+  {
+    "title": "Wipro Elite National Talent Hunt",
+    "organizer": "Wipro",
+    "event_type": "campus_drive",
+    "description": "Freshers hiring program to attract the best of 2026 engineering graduates across the country.",
+    "location": "Pan India",
+    "mode": "online",
+    "skills": [
+      "Aptitude",
+      "Coding",
+      "Communication"
+    ],
+    "url": "https://careers.wipro.com/elite",
+    "id": "ab07b97b-9ab7-4a98-97b1-fa0ea4e0ecef",
+    "is_active": true,
+    "registration_deadline": "2026-12-12T12:46:49Z",
+    "created_at": "2026-10-08T12:46:49Z"
+  },
+  {
+    "title": "Cognizant GenC Elevate",
+    "organizer": "Cognizant",
+    "event_type": "campus_drive",
+    "description": "Hiring drive for GenC Elevate profile offering premium compensation for skilled coders.",
+    "location": "Pan India",
+    "mode": "hybrid",
+    "skills": [
+      "Java",
+      "SQL",
+      "Aptitude"
+    ],
+    "url": "https://careers.cognizant.com/student-and-early-careers/",
+    "id": "23d6d0e8-0eae-4e94-8f03-911eeeb04977",
+    "is_active": true,
+    "registration_deadline": "2026-12-14T12:46:49Z",
+    "created_at": "2026-10-08T12:46:49Z"
+  },
+  {
+    "title": "Capgemini Exceller Drive",
+    "organizer": "Capgemini",
+    "event_type": "campus_drive",
+    "description": "Capgemini off-campus drive for freshers. Multiple roles available.",
+    "location": "Pan India",
+    "mode": "online",
+    "skills": [
+      "C++",
+      "Java",
+      "Problem Solving"
+    ],
+    "url": "https://www.capgemini.com/careers/students/",
+    "id": "be078107-3109-4505-9f54-c5b9c7363be6",
+    "is_active": true,
+    "registration_deadline": "2026-12-16T12:46:49Z",
+    "created_at": "2026-10-08T12:46:49Z"
   }
 ]
