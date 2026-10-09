@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import { useRouter } from 'next/navigation';
+import { BorderBeam } from "@/components/magicui/border-beam";
 
 export default function LoginPage() {
   const router = useRouter();
@@ -24,8 +25,21 @@ export default function LoginPage() {
       {/* Background decoration */}
       <div className="absolute inset-0 bg-gradient-to-br from-[#38BDF8]/5 via-[#C084FC]/5 to-transparent pointer-events-none"></div>
 
-      <div className="bg-white/80 backdrop-blur-2xl border border-white/60 shadow-[0_16px_64px_rgba(0,0,0,0.15)] w-full max-w-md rounded-[28px] p-8 relative z-10 flex flex-col animate-in fade-in zoom-in-95 duration-300">
-        <button onClick={() => router.push('/')} className="absolute top-5 right-5 w-8 h-8 flex items-center justify-center rounded-full hover:bg-black/5 text-on-surface-variant transition-colors">
+      <div className="bg-white/80 backdrop-blur-2xl border border-white/60 shadow-[0_16px_64px_rgba(0,0,0,0.15)] w-full max-w-md rounded-[28px] p-8 relative z-10 flex flex-col animate-in fade-in zoom-in-95 duration-300 overflow-hidden">
+        <BorderBeam
+          duration={6}
+          size={400}
+          className="from-transparent via-red-500 to-transparent"
+        />
+        <BorderBeam
+          duration={6}
+          delay={3}
+          size={400}
+          borderWidth={2}
+          className="from-transparent via-blue-500 to-transparent"
+        />
+        
+        <button onClick={() => router.push('/')} className="absolute top-5 right-5 w-8 h-8 flex items-center justify-center rounded-full hover:bg-black/5 text-on-surface-variant transition-colors z-20">
           <span className="material-symbols-outlined text-[20px]">close</span>
         </button>
         
@@ -78,24 +92,24 @@ export default function LoginPage() {
         <form onSubmit={handleLoginSubmit} className="flex flex-col gap-4">
           {authMode === 'signup' && (
             <div className="flex flex-col gap-1.5">
-              <label className="text-xs font-bold text-on-surface-variant uppercase tracking-wider ml-1">Full Name</label>
-              <input type="text" required placeholder="John Doe" className="w-full bg-white/50 border border-white/60 rounded-xl px-4 py-3 text-on-surface placeholder:text-on-surface-variant/50 focus:outline-none focus:ring-2 focus:ring-[#38BDF8]/50 transition-all shadow-sm" />
+              <label htmlFor="fullname" className="text-xs font-bold text-on-surface-variant uppercase tracking-wider ml-1">Full Name</label>
+              <input id="fullname" type="text" required placeholder="John Doe" className="w-full bg-white/50 border border-white/60 rounded-xl px-4 py-3 text-on-surface placeholder:text-on-surface-variant/50 focus:outline-none focus:ring-2 focus:ring-[#38BDF8]/50 transition-all shadow-sm" />
             </div>
           )}
           
           <div className="flex flex-col gap-1.5">
-            <label className="text-xs font-bold text-on-surface-variant uppercase tracking-wider ml-1">Email Address</label>
-            <input type="email" required placeholder="you@university.edu" className="w-full bg-white/50 border border-white/60 rounded-xl px-4 py-3 text-on-surface placeholder:text-on-surface-variant/50 focus:outline-none focus:ring-2 focus:ring-[#38BDF8]/50 transition-all shadow-sm" />
+            <label htmlFor="email" className="text-xs font-bold text-on-surface-variant uppercase tracking-wider ml-1">Email Address</label>
+            <input id="email" type="email" required placeholder="you@university.edu" className="w-full bg-white/50 border border-white/60 rounded-xl px-4 py-3 text-on-surface placeholder:text-on-surface-variant/50 focus:outline-none focus:ring-2 focus:ring-[#38BDF8]/50 transition-all shadow-sm" />
           </div>
 
           <div className="flex flex-col gap-1.5">
             <div className="flex items-center justify-between ml-1">
-              <label className="text-xs font-bold text-on-surface-variant uppercase tracking-wider">Password</label>
+              <label htmlFor="password" className="text-xs font-bold text-on-surface-variant uppercase tracking-wider">Password</label>
               {authMode === 'signin' && (
                 <a href="#" className="text-xs font-semibold text-[#0284c7] hover:underline">Forgot?</a>
               )}
             </div>
-            <input type="password" required placeholder="••••••••" className="w-full bg-white/50 border border-white/60 rounded-xl px-4 py-3 text-on-surface placeholder:text-on-surface-variant/50 focus:outline-none focus:ring-2 focus:ring-[#38BDF8]/50 transition-all shadow-sm" />
+            <input id="password" type="password" required placeholder="••••••••" className="w-full bg-white/50 border border-white/60 rounded-xl px-4 py-3 text-on-surface placeholder:text-on-surface-variant/50 focus:outline-none focus:ring-2 focus:ring-[#38BDF8]/50 transition-all shadow-sm" />
           </div>
 
           <button type="submit" className={`mt-4 w-full py-3.5 rounded-xl text-white font-bold text-sm shadow-md transition-all active:scale-[0.98] ${authRole === 'admin' ? 'bg-gradient-to-r from-purple-500 to-indigo-600 hover:from-purple-600 hover:to-indigo-700' : 'bg-gradient-to-r from-[#38BDF8] to-[#0284c7] hover:from-[#0ea5e9] hover:to-[#0369a1]'}`}>

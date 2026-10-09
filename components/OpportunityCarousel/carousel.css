@@ -1,0 +1,122 @@
+.carousel-container {
+  position: relative;
+  width: 100%;
+  height: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  perspective: 1400px;
+  overflow: hidden;
+  padding: 40px 0;
+}
+
+.carousel {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transform: translateZ(-750px);
+}
+
+.carousel-card {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform-style: preserve-3d;
+  transform: rotateY(var(--card-angle, 0deg)) translateZ(750px);
+  transition:
+    transform 800ms cubic-bezier(.22,1,.36,1),
+    opacity 800ms ease,
+    filter 800ms ease,
+    z-index 0s; /* Z-index should change instantly or handled by react */
+  transform-origin: center center;
+  border-radius: 24px;
+  box-shadow: 0 10px 30px -10px rgba(0,0,0,0.5);
+}
+
+.card-large {
+  width: 320px;
+  height: 430px;
+  margin-top: -215px;
+  margin-left: -160px;
+}
+
+.card-small {
+  width: 220px;
+  height: 300px;
+  margin-top: -150px;
+  margin-left: -110px;
+}
+
+/* Float animations based on index for variety */
+@keyframes float1 {
+  0%, 100% { transform: translateY(0) rotate(0.5deg); }
+  50% { transform: translateY(-8px) rotate(-0.5deg); }
+}
+
+@keyframes float2 {
+  0%, 100% { transform: translateY(-5px) rotate(-1deg); }
+  50% { transform: translateY(5px) rotate(1deg); }
+}
+
+@keyframes float3 {
+  0%, 100% { transform: translateY(3px) rotate(0deg); }
+  50% { transform: translateY(-3px) rotate(-1deg); }
+}
+
+.float-anim-0 { animation: float1 6s ease-in-out infinite; }
+.float-anim-1 { animation: float2 7s ease-in-out infinite; }
+.float-anim-2 { animation: float3 5s ease-in-out infinite; }
+
+.carousel-card:hover .card-content {
+  filter: brightness(1.1);
+  transform: translateY(-5px) scale(1.02);
+}
+
+.card-content {
+  transition: transform 300ms ease, filter 300ms ease;
+  width: 100%;
+  height: 100%;
+}
+
+@media (max-width: 1024px) {
+  .carousel {
+    transform: translateZ(-550px);
+  }
+  .carousel-card {
+    transform: rotateY(var(--card-angle, 0deg)) translateZ(550px);
+  }
+  .card-large {
+    width: 260px;
+    height: 350px;
+    margin-top: -175px;
+    margin-left: -130px;
+  }
+  .card-small {
+    width: 180px;
+    height: 250px;
+    margin-top: -125px;
+    margin-left: -90px;
+  }
+}
+
+@media (max-width: 768px) {
+  .carousel {
+    transform: translateZ(-400px);
+  }
+  .carousel-card {
+    transform: rotateY(var(--card-angle, 0deg)) translateZ(400px);
+  }
+  .card-large {
+    width: 210px;
+    height: 290px;
+    margin-top: -145px;
+    margin-left: -105px;
+  }
+  .card-small {
+    width: 150px;
+    height: 210px;
+    margin-top: -105px;
+    margin-left: -75px;
+  }
+}

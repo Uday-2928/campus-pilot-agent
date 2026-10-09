@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
+import { OpportunityCarousel } from '@/components/OpportunityCarousel/OpportunityCarousel';
 
 const dashboardStats = [
   { label: 'Profile completion', value: '92%', detail: '+8% this month' },
@@ -74,6 +75,17 @@ export default function StudentDashboard() {
             <div className="h-full bg-gradient-to-r from-[#38BDF8] to-[#0284c7] rounded-full" style={{ width: '92%' }}></div>
           </div>
         </div>
+      </section>
+
+      {/* Premium 3D Opportunity Carousel */}
+      <section className="mb-12 w-full mt-4">
+        <div className="flex flex-col items-center justify-center mb-6">
+          <h2 className="font-display-md text-3xl text-on-surface text-center tracking-tight">Your Career Command Center</h2>
+          <p className="text-on-surface-variant mt-2 text-center max-w-xl">
+            Explore AI-matched opportunities, training, and resources customized for your career goals.
+          </p>
+        </div>
+        <OpportunityCarousel autoRotate={true} />
       </section>
 
       <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
