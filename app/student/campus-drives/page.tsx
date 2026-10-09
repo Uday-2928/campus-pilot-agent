@@ -1,6 +1,12 @@
 import React from 'react';
-import ComingSoonPage from '@/components/ComingSoonPage';
+import { OpportunitiesList } from '@/components/OpportunitiesList';
 
 export default function Page() {
-  return <ComingSoonPage title="Campus Drives" />;
+  return (
+    <OpportunitiesList 
+      type="campus_drive"
+      title="Campus Drives" 
+      description="Upcoming campus placement drives and hiring events."
+    />
+  );
 }
